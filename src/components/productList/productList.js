@@ -21,9 +21,8 @@ const ProductList = ({ product }) => {
 				<div className="content">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 					Phasellus nec iaculis mauris. <a href="#id">@bulmaio</a>.
-					<a href="#id">#css</a> <a href="#id">#responsive</a>
-					<br />
-					<time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+					<br /><br />
+					<button className="button is-primary">Vai al prodotto</button>
 				</div>
 			</div>
 		</div>
