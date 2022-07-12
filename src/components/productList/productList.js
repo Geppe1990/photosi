@@ -1,7 +1,6 @@
-const ProductList = ({ product }) => {
-	if(!product) { return }
-
-	const { name, color, size, category } = product;
+const ProductList = ({ attr }) => {
+	if(!attr) { return }
+	const { name, color, size, category } = attr;
 
 	return (
 		<div className="card">

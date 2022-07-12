@@ -58,7 +58,7 @@ const List = () => {
 								if(showProduct) {
 									return (
 										<div className="column is-one-quarter" key={i}>
-											<ProductList product={product} />
+											<ProductList attr={product} />
 										</div>
 									)
 								} else { return null }
