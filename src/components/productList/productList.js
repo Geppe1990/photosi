@@ -1,7 +1,7 @@
-function ProductList({ product }) {
+const ProductList = ({ product }) => {
 	if(!product) { return }
 
-	const { name, color, size, code, category } = product;
+	const { name, color, size, category } = product;
 
 	return (
 		<div className="card">

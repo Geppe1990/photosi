@@ -1,24 +1,33 @@
 import ProductList from "../productList/productList";
 import { useState } from "react";
+import Filters from "../filters/filters";
 
-function List() {
-	//TODO: Inserire products come stato
+const List = () => {
 	const [products, setProducts] = useState([{
 			name: "Giuseppe",
 			color: "Red",
 			size: "XL",
-			code: "123456789",
 			category: "Shoes"
 		}, {
 			name: "Giuseppe",
 			color: "Red",
 			size: "XL",
-			code: "123456789",
 			category: "Shoes"
 		}, {
 			color: "Red",
 			size: "XL",
-			code: "123456789",
+			category: "Shoes"
+		}, {
+			color: "Red",
+			size: "XL",
+			category: "Shoes"
+		}, {
+			color: "Red",
+			size: "XL",
+			category: "Shoes"
+		}, {
+			color: "Red",
+			size: "XL",
 			category: "Shoes"
 		}
 	]);
@@ -26,21 +35,19 @@ function List() {
 	return (
 		<div className="section">
 			<div className="container">
-				<div className="columns is-multiline">
-					{products.map((product, i) => (
-						<div className="column is-one-quarter" key={i}>
-							<ProductList product={product} />
-						</div>
-					))}
-					{/* <div className="column is-one-quarter">
-						<Product />
-					</div>
+				<div className="columns">
 					<div className="column is-one-quarter">
-						<Product />
+						<Filters />
 					</div>
-					<div className="column is-one-quarter">
-						<Product />
-					</div> */}
+					<div className="column is-three-quarters">
+						<div className="columns is-multiline">
+							{products.map((product, i) => (
+								<div className="column is-one-quarter" key={i}>
+									<ProductList product={product} />
+								</div>
+							))}
+						</div>	
+					</div>
 				</div>
 			</div>
 		</div>
