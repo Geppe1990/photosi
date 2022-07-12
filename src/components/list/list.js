@@ -15,18 +15,22 @@ const List = () => {
 			size: "Medium",
 			category: "Pantaloni"
 		}, {
+			name: "Andrea",
 			color: "Rosso",
 			size: "Small",
 			category: "Scarpe"
 		}, {
+			name: "Riccardo",
 			color: "Verde",
 			size: "Small",
 			category: "Pantaloni"
 		}, {
+			name: "Michele",
 			color: "Rosso",
 			size: "Medium",
 			category: "Scarpe"
 		}, {
+			name: "Matteo",
 			color: "Verde",
 			size: "Large",
 			category: "Scarpe"
@@ -45,11 +49,8 @@ const List = () => {
 					<div className="column is-three-quarters">
 						<div className="columns is-multiline">
 							{products.map((product, i) => {
-								console.log("PRODOTTO " + i);
-								console.log(product.category)
-								console.log(filter.category)
-								console.log(product.category === filter.category || filter.category === '')
 								if(
+									(product.name.toLowerCase().includes(filter.name.toLowerCase()) || filter.name === '') &&
 									(product.category === filter.category || filter.category === '') &&
 									(product.size === filter.size || filter.size === '') &&
 									(product.color === filter.color || filter.color === '')
