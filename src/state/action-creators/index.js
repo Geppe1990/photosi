@@ -23,7 +23,7 @@ export const withdrawMoney = (amount) => {
 export const filterNewName = (name) => {
 	return (dispatch) => {
 		dispatch({
-			type: "name",
+			type: "FILTER_NAME",
 			payload: name
 		})
 	}
@@ -32,7 +32,7 @@ export const filterNewName = (name) => {
 export const filterNewCategory = (category) => {
 	return (dispatch) => {
 		dispatch({
-			type: "category",
+			type: "FILTER_CATEGORY",
 			payload: category
 		})
 	}
@@ -41,7 +41,7 @@ export const filterNewCategory = (category) => {
 export const filterNewColor = (color) => {
 	return (dispatch) => {
 		dispatch({
-			type: "color",
+			type: "FILTER_COLOR",
 			payload: color
 		})
 	}
@@ -51,7 +51,7 @@ export const filterNewColor = (color) => {
 export const filterNewSize = (size) => {
 	return (dispatch) => {
 		dispatch({
-			type: "size",
+			type: "FILTER_SIZE",
 			payload: size
 		})
 	}

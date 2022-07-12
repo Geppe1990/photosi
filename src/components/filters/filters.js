@@ -14,7 +14,8 @@ const Input = ({ value, callback }) => (
 	</div>
 );
 
-const RadioInput = ({ elms, callback, name, val }) => (
+const RadioInput = ({ elms, callback, name }) => { 
+	return(
 	<div className="control">
 		{elms.map((elm, i) => (
 			<div key={i} className="pb-2">
@@ -23,7 +24,6 @@ const RadioInput = ({ elms, callback, name, val }) => (
 						type="radio"
 						name={name}
 						value={elm.value}
-						checked={val === elm.value}
 						onChange={(e) => callback(e.target.value)}
 					/>&nbsp;{elm.label}
 				</label>
@@ -31,18 +31,19 @@ const RadioInput = ({ elms, callback, name, val }) => (
 			</div>
 		))}
 	</div>
-)
+)}
 
 const Filters = () => {
 	const [searchName, setSearchName] = useState("");
+	const [searchCategory, setSearchCategory] = useState("");
 	const [searchSize, setSearchSize] = useState("");
 	const [searchColor, setSearchColor] = useState("");
-	const [searchCategory, setSearchCategory] = useState("");
 	
 	// REDUX
 	const filterName = useSelector((state) => state.filter)
+	const filterCategory = useSelector((state) => state.filter)
 	const dispatch = useDispatch()
-	const { filterNewName } = bindActionCreators(actionCreators, dispatch)
+	const { filterNewName, filterNewCategory } = bindActionCreators(actionCreators, dispatch)
 
 	return (
 		<aside className="menu is-one-third">
@@ -66,12 +67,13 @@ const Filters = () => {
 						elms={[{
 							value: "Pantaloni",
 							label: "Pantaloni",
+							checked: filterCategory === "Pantaloni"
 						},{
 							value: "Scarpe",
 							label: "Scarpe",
+							checked: filterCategory === "Scarpe"
 						}]}
-						val={searchCategory}
-						callback={setSearchCategory}
+						callback={filterNewCategory}
 						name="categoryType"
 					/>
 				</li>
@@ -83,12 +85,11 @@ const Filters = () => {
 						elms={[{
 							value: "Rosso",
 							label: "Rosso",
-							checked: searchColor === "Rosso"
 						},{
 							value: "Verde",
 							label: "Verde",
-							checked: searchColor === "Verde"
 						}]}
+						val={searchColor}
 						callback={setSearchColor}
 						name="colorType"
 					/>
@@ -101,16 +102,14 @@ const Filters = () => {
 						elms={[{
 							value: "Large",
 							label: "Large",
-							checked: searchSize === "Large"
 						},{
 							value: "Medium",
 							label: "Medium",
-							checked: searchSize === "Medium"
 						},{
 							value: "Small",
 							label: "Small",
-							checked: searchSize === "Small"
 						}]}
+						val={searchSize}
 						callback={setSearchSize}
 						name="sizeType"
 					/>

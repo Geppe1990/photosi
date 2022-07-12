@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
-import filterReducer from "./FilterReducer"
+import filterNameReducer from "./FilterNameReducer"
+import filterCategoryReducer from "./FilterCategoryReducer";
 
 const reducers = combineReducers({
-	filter: filterReducer
+	filterName: filterNameReducer,
+	filterCategory: filterCategoryReducer
 })
 
 export default reducers
