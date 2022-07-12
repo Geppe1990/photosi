@@ -1,5 +1,5 @@
-const reducer = (state = "", action) => {
+const filterReducer = (state = "", action) => {
 	return !action.payload ? state : action.payload;
 };
 
-export default reducer
+export default filterReducer;

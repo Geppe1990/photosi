@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import accountReducer from "./FilterReducer"
+import filterReducer from "./FilterReducer"
 
 const reducers = combineReducers({
-	account: accountReducer
+	filter: filterReducer
 })
 
 export default reducers

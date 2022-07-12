@@ -14,7 +14,7 @@ const Input = ({ value, callback }) => (
 	</div>
 );
 
-const RadioInput = ({ elms, callback, name }) => (
+const RadioInput = ({ elms, callback, name, val }) => (
 	<div className="control">
 		{elms.map((elm, i) => (
 			<div key={i} className="pb-2">
@@ -23,7 +23,7 @@ const RadioInput = ({ elms, callback, name }) => (
 						type="radio"
 						name={name}
 						value={elm.value}
-						checked={elm.checked}
+						checked={val === elm.value}
 						onChange={(e) => callback(e.target.value)}
 					/>&nbsp;{elm.label}
 				</label>
@@ -40,19 +40,22 @@ const Filters = () => {
 	const [searchCategory, setSearchCategory] = useState("");
 	
 	// REDUX
-	const account = useSelector((state) => state.account)
+	const filterName = useSelector((state) => state.filter)
 	const dispatch = useDispatch()
-	const {depositMoney, withdrawMoney} = bindActionCreators(actionCreators, dispatch)
+	const { filterNewName } = bindActionCreators(actionCreators, dispatch)
 
 	return (
 		<aside className="menu is-one-third">
+			<div className="test">  {/* TODO RIMUOVI BLOCCO */}
+				{filterName}
+			</div>
 			<h2 className="is-size-4">Cerca</h2>
 			<p className="menu-label">Nome</p>
 			<ul className="menu-list field">
 				<li>
 					<Input 
-						value={account}
-						callback={depositMoney}
+						value={filterName}
+						callback={filterNewName}
 					/>
 				</li>
 			</ul>
@@ -63,12 +66,11 @@ const Filters = () => {
 						elms={[{
 							value: "Pantaloni",
 							label: "Pantaloni",
-							checked: searchCategory === "Pantaloni"
 						},{
 							value: "Scarpe",
 							label: "Scarpe",
-							checked: searchCategory === "Scarpe"
 						}]}
+						val={searchCategory}
 						callback={setSearchCategory}
 						name="categoryType"
 					/>
