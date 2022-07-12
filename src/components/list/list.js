@@ -49,12 +49,13 @@ const List = () => {
 					<div className="column is-three-quarters">
 						<div className="columns is-multiline">
 							{products.map((product, i) => {
-								if(
-									(product.name.toLowerCase().includes(filter.name.toLowerCase()) || filter.name === '') &&
-									(product.category === filter.category || filter.category === '') &&
-									(product.size === filter.size || filter.size === '') &&
-									(product.color === filter.color || filter.color === '')
-								) {
+								const filterName = product.name.toLowerCase().includes(filter.name.toLowerCase()) || filter.name === '';
+								const filterCategory = product.category === filter.category || filter.category === '';
+								const filterSize = product.size === filter.size || filter.size === '';
+								const filterColor = product.color === filter.color || filter.color === '';
+								const showProduct = filterName && filterCategory && filterSize && filterColor
+
+								if(showProduct) {
 									return (
 										<div className="column is-one-quarter" key={i}>
 											<ProductList product={product} />
