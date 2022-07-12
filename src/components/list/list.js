@@ -1,37 +1,40 @@
 import ProductList from "../productList/productList";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSelector } from 'react-redux';
 import Filters from "../filters/filters";
 
 const List = () => {
 	const [products, setProducts] = useState([{
 			name: "Giuseppe",
-			color: "Red",
-			size: "XL",
-			category: "Shoes"
+			color: "Rosso",
+			size: "Large",
+			category: "Scarpe"
 		}, {
-			name: "Giuseppe",
-			color: "Red",
-			size: "XL",
-			category: "Shoes"
+			name: "Giulia",
+			color: "Verde",
+			size: "Medium",
+			category: "Pantaloni"
 		}, {
-			color: "Red",
-			size: "XL",
-			category: "Shoes"
+			color: "Rosso",
+			size: "Small",
+			category: "Scarpe"
 		}, {
-			color: "Red",
-			size: "XL",
-			category: "Shoes"
+			color: "Verde",
+			size: "Small",
+			category: "Pantaloni"
 		}, {
-			color: "Red",
-			size: "XL",
-			category: "Shoes"
+			color: "Rosso",
+			size: "Medium",
+			category: "Scarpe"
 		}, {
-			color: "Red",
-			size: "XL",
-			category: "Shoes"
+			color: "Verde",
+			size: "Large",
+			category: "Scarpe"
 		}
 	]);
 
+	const filter = useSelector((state) => state.filter)
+		
 	return (
 		<div className="section">
 			<div className="container">
@@ -41,11 +44,23 @@ const List = () => {
 					</div>
 					<div className="column is-three-quarters">
 						<div className="columns is-multiline">
-							{products.map((product, i) => (
-								<div className="column is-one-quarter" key={i}>
-									<ProductList product={product} />
-								</div>
-							))}
+							{products.map((product, i) => {
+								console.log("PRODOTTO " + i);
+								console.log(product.category)
+								console.log(filter.category)
+								console.log(product.category === filter.category || filter.category === '')
+								if(
+									(product.category === filter.category || filter.category === '') &&
+									(product.size === filter.size || filter.size === '') &&
+									(product.color === filter.color || filter.color === '')
+								) {
+									return (
+										<div className="column is-one-quarter" key={i}>
+											<ProductList product={product} />
+										</div>
+									)
+								} else { return null }
+							})}
 						</div>	
 					</div>
 				</div>
