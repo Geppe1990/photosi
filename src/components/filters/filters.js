@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../../state/index';
 
 const Input = ({ value, callback }) => (
 	<div className="control">
@@ -35,9 +38,19 @@ const Filters = () => {
 	const [searchSize, setSearchSize] = useState("");
 	const [searchColor, setSearchColor] = useState("");
 	const [searchCategory, setSearchCategory] = useState("");
+	
+	// REDUX
+	const account = useSelector((state) => state.account)
+	const dispatch = useDispatch()
+	const {depositMoney, withdrawMoney} = bindActionCreators(actionCreators, dispatch)
 
 	return (
 		<aside className="menu is-one-third">
+			{/* INIZIO REDUX */}
+			<h1>{account}</h1>
+			<button onClick={() => depositMoney(1000)}>Deposit</button>
+			<button onClick={() => withdrawMoney(1000)}>Withdraw</button>
+			{/* FINE REDUX */}
 			<h2 className="is-size-4">Cerca</h2>
 			<p className="menu-label">Nome</p>
 			<ul className="menu-list field">
