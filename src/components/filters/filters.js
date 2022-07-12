@@ -33,11 +33,7 @@ const RadioInput = ({ elms, callback, name }) => {
 )}
 
 const Filters = () => {
-	const { name } = useSelector((state) => state.filter)
-	const { category} = useSelector((state) => state.filter)
-	const { color } = useSelector((state) => state.filter)
-	const { size } = useSelector((state) => state.filter)
-	
+	const { name, category, color, size } = useSelector((state) => state.filter)
 	const dispatch = useDispatch()
 	const { filterNewName, filterNewCategory, filterNewColor, filterNewSize } = bindActionCreators(actionCreators, dispatch)
 
