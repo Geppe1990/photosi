@@ -13,13 +13,14 @@ const Input = ({ value, callback }) => (
 	</div>
 );
 
-const RadioInput = ({ elms, callback, name }) => { 
+const RadioInput = ({ elms, callback, name, param }) => { 
 	return(
 	<div className="control">
 		{elms.map((elm, i) => (
 			<div key={i} className="pb-2">
 				<label className="radio" key={i}>
 					<input
+						checked={elm.value === param}
 						type="radio"
 						name={name}
 						value={elm.value}
@@ -56,12 +57,11 @@ const Filters = () => {
 						elms={[{
 							value: "Pantaloni",
 							label: "Pantaloni",
-							checked: category === "Pantaloni"
 						},{
 							value: "Scarpe",
 							label: "Scarpe",
-							checked: category === "Scarpe"
 						}]}
+						param={category}
 						callback={filterNewCategory}
 						name="categoryType"
 					/>
@@ -80,6 +80,7 @@ const Filters = () => {
 							label: "Verde",
 							checked: color === "Verde"
 						}]}
+						param={color}
 						callback={filterNewColor}
 						name="colorType"
 					/>
@@ -92,16 +93,14 @@ const Filters = () => {
 						elms={[{
 							value: "Large",
 							label: "Large",
-							checked: size === "Large"
 						},{
 							value: "Medium",
 							label: "Medium",
-							checked: size === "Medium"
 						},{
 							value: "Small",
 							label: "Small",
-							checked: size === "Small"
 						}]}
+						param={size}
 						callback={filterNewSize}
 						name="sizeType"
 					/>
