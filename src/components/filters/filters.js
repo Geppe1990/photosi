@@ -9,7 +9,7 @@ const Input = ({ value, callback }) => (
 			className="input"
 			type="text"
 			value={value}
-			onChange={(e) => callback(e.target.value)}
+			onChange={e => callback(e.target.value)}
 		/>
 	</div>
 );
@@ -46,18 +46,13 @@ const Filters = () => {
 
 	return (
 		<aside className="menu is-one-third">
-			{/* INIZIO REDUX */}
-			<h1>{account}</h1>
-			<button onClick={() => depositMoney(1000)}>Deposit</button>
-			<button onClick={() => withdrawMoney(1000)}>Withdraw</button>
-			{/* FINE REDUX */}
 			<h2 className="is-size-4">Cerca</h2>
 			<p className="menu-label">Nome</p>
 			<ul className="menu-list field">
 				<li>
 					<Input 
-						value={searchName}
-						callback={setSearchName}
+						value={account}
+						callback={depositMoney}
 					/>
 				</li>
 			</ul>

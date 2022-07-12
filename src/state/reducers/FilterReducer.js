@@ -1,12 +1,5 @@
-const reducer = (state = 0, action) => {
-	switch (action.type) {
-		case "deposit":
-			return state + action.payload
-		case "withdraw": 
-			return state - action.payload
-		default:
-			return state
-	}
+const reducer = (state = "", action) => {
+	return !action.payload ? state : action.payload;
 };
 
 export default reducer
