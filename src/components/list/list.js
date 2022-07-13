@@ -8,32 +8,38 @@ const List = () => {
 			name: "Giuseppe",
 			color: "Rosso",
 			size: "Large",
-			category: "Scarpe"
+			category: "Scarpe",
+			code: "123"
 		}, {
 			name: "Giulia",
 			color: "Verde",
 			size: "Medium",
-			category: "Pantaloni"
+			category: "Pantaloni",
+			code: "456"
 		}, {
 			name: "Andrea",
 			color: "Rosso",
 			size: "Small",
-			category: "Scarpe"
+			category: "Scarpe",
+			code: "789"
 		}, {
 			name: "Riccardo",
 			color: "Verde",
 			size: "Small",
-			category: "Pantaloni"
+			category: "Pantaloni",
+			code: "012"
 		}, {
 			name: "Michele",
 			color: "Rosso",
 			size: "Medium",
-			category: "Scarpe"
+			category: "Scarpe",
+			code: "345"
 		}, {
 			name: "Matteo",
 			color: "Verde",
 			size: "Large",
-			category: "Scarpe"
+			category: "Scarpe",
+			code: "678"
 		}
 	]);
 

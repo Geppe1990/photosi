@@ -1,3 +1,5 @@
+import { Link, NavLink } from "react-router-dom";
+
 const ProductList = ({ attr }) => {
 	if(!attr) { return }
 	const { name, color, size, category } = attr;
@@ -21,7 +23,13 @@ const ProductList = ({ attr }) => {
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 					Phasellus nec iaculis mauris. <a href="#id">@bulmaio</a>.
 					<br /><br />
-					<button className="button is-primary">Vai al prodotto</button>
+					<NavLink 
+						className="button is-primary"
+						to={`/${attr.code}`}
+						state={{ attr }}
+					>
+						Vai al prodotto
+					</NavLink>
 				</div>
 			</div>
 		</div>
