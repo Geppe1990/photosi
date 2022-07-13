@@ -1,10 +1,10 @@
 import ProductList from "../productList/productList";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSelector } from 'react-redux';
 import Filters from "../filters/filters";
 
 const List = () => {
-	const [products, setProducts] = useState([{
+	const [products] = useState([{
 			name: "Giuseppe",
 			color: "Rosso",
 			size: "Large",
