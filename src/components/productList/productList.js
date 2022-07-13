@@ -16,7 +16,7 @@ const ProductList = ({ attr }) => {
 					<div className="media-content">
 						<p className="title is-4">{name}</p>
 						<p className="subtitle is-6">{color}</p>
-						<p className="is-6">{size}</p>
+						<p className="tag is-primary">{size}</p>
 					</div>
 				</div>
 
