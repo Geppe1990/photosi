@@ -38,6 +38,13 @@ const Filters = () => {
 	const dispatch = useDispatch()
 	const { filterNewName, filterNewCategory, filterNewColor, filterNewSize } = bindActionCreators(actionCreators, dispatch)
 
+	const resetFilters = () => {
+		filterNewName("");
+		filterNewCategory("");
+		filterNewColor("");
+		filterNewSize("");
+	}
+
 	return (
 		<aside className="menu is-one-third">
 			<h2 className="is-size-4">Cerca</h2>
@@ -104,6 +111,15 @@ const Filters = () => {
 						callback={filterNewSize}
 						name="sizeType"
 					/>
+				</li>
+			</ul>
+			<p className="menu-label">Reset</p>
+			<ul className="menu-list field">
+				<li>
+					<button 
+						className="button is-primary"
+						onClick={resetFilters}
+					>Resetta filtri</button>
 				</li>
 			</ul>
 		</aside>
