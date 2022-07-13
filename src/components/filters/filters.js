@@ -117,7 +117,7 @@ const Filters = () => {
 			<ul className="menu-list field">
 				<li>
 					<button 
-						className="button is-primary"
+						className="button is-primary is-fullwidth"
 						onClick={resetFilters}
 					>Resetta filtri</button>
 				</li>
