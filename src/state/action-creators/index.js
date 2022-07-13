@@ -14,3 +14,7 @@ export const filterNewColor = (color) => ((dispatch) => {
 export const filterNewSize = (size) => ((dispatch) => {
 	dispatch({ type: "FILTER_SIZE", payload: size })
 })
+
+export const addNewProduct = (product) => ((dispatch) => {
+	dispatch({ type: "ADD_PRODUCT", payload: product })
+})
