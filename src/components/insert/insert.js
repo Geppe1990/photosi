@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useNavigate } from "react-router";
+import { useLocation } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../state/index';
 import { useState } from "react";
@@ -60,22 +61,23 @@ const TextareaInput = ({ label, value, callback, k }) => {
 const Insert = () => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch()
-	const { addNewProduct } = bindActionCreators(actionCreators, dispatch)
+	const { state } = useLocation()
+	const { addNewProduct, editProduct } = bindActionCreators(actionCreators, dispatch)
 
+	const [editMode] = useState(state !== null)
 	const [product, setProduct] = useState({
-		name: "",
-		color: "",
-		size: "",
-		category: "",
-		code: "",
-		description: ""
+		name: editMode ? state.name : "",
+		color: editMode ? state.color : "",
+		size: editMode ? state.size : "",
+		category: editMode ? state.category : "",
+		code: editMode ? state.code : "",
+		description: editMode ? state.description : ""
 	});
 
 	const updateForm = (value) => (setProduct((prev) => ({ ...prev, ...value })))
-
 	const onSubmit = (e) => {
 		e.preventDefault();
-		addNewProduct(product);
+		editMode ? editProduct(product) : addNewProduct(product);
 
 		navigate("/");
 	}

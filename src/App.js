@@ -13,8 +13,7 @@ function App() {
 			<Route exact path="/" element={<List />} />
 			<Route exact path="/:id" element={<Product />} />
 			<Route path="/create" element={<Insert />} />
-			{/* <Route path="/create" element={<Create />} />
-			<Route path="/search" element={<Search />} /> */}
+			<Route path="/edit/:id" element={<Insert />} />
 		</Routes>
 	</>
   );
