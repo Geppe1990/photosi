@@ -81,11 +81,9 @@ const Filters = () => {
 						elms={[{
 							value: "Rosso",
 							label: "Rosso",
-							checked: color === "Rosso"
 						},{
 							value: "Verde",
 							label: "Verde",
-							checked: color === "Verde"
 						}]}
 						param={color}
 						callback={filterNewColor}
