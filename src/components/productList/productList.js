@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const ProductList = ({ attr }) => {
 	if(!attr) { return }
-	const { name, color, size, category } = attr;
+	const { name, color, description } = attr;
 
 	return (
 		<div className="card">
@@ -20,11 +20,10 @@ const ProductList = ({ attr }) => {
 				</div>
 
 				<div className="content">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					Phasellus nec iaculis mauris. <a href="#id">@bulmaio</a>.
+					{description}
 					<br /><br />
 					<NavLink 
-						className="button is-primary"
+						className="button is-primary is-fullwidth"
 						to={`/${attr.code}`}
 						state={{ attr }}
 					>

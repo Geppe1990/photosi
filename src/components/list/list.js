@@ -9,37 +9,43 @@ const List = () => {
 			color: "Rosso",
 			size: "Large",
 			category: "Scarpe",
-			code: "123"
+			code: "123",
+			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus unde voluptatibus eius eos aspernatur fuga cum maiores inventore? Omnis itaque debitis illum at laudantium nostrum fuga accusantium error iusto aut?"
 		}, {
 			name: "Giulia",
 			color: "Verde",
 			size: "Medium",
 			category: "Pantaloni",
-			code: "456"
+			code: "456",
+			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus unde voluptatibus eius eos aspernatur fuga cum maiores inventore? Omnis itaque debitis illum at laudantium nostrum fuga accusantium error iusto aut?"
 		}, {
 			name: "Andrea",
 			color: "Rosso",
 			size: "Small",
 			category: "Scarpe",
-			code: "789"
+			code: "789",
+			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus unde voluptatibus eius eos aspernatur fuga cum maiores inventore? Omnis itaque debitis illum at laudantium nostrum fuga accusantium error iusto aut?"
 		}, {
 			name: "Riccardo",
 			color: "Verde",
 			size: "Small",
 			category: "Pantaloni",
-			code: "012"
+			code: "012",
+			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus unde voluptatibus eius eos aspernatur fuga cum maiores inventore? Omnis itaque debitis illum at laudantium nostrum fuga accusantium error iusto aut?"
 		}, {
 			name: "Michele",
 			color: "Rosso",
 			size: "Medium",
 			category: "Scarpe",
-			code: "345"
+			code: "345",
+			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus unde voluptatibus eius eos aspernatur fuga cum maiores inventore? Omnis itaque debitis illum at laudantium nostrum fuga accusantium error iusto aut?"
 		}, {
 			name: "Matteo",
 			color: "Verde",
 			size: "Large",
 			category: "Scarpe",
-			code: "678"
+			code: "678",
+			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus unde voluptatibus eius eos aspernatur fuga cum maiores inventore? Omnis itaque debitis illum at laudantium nostrum fuga accusantium error iusto aut?"
 		}
 	]);
 
