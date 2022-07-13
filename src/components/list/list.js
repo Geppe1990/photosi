@@ -5,42 +5,42 @@ import Filters from "../filters/filters";
 
 const List = () => {
 	const [products] = useState([{
-			name: "Giuseppe",
+			name: "Nome 1",
 			color: "Rosso",
 			size: "Large",
 			category: "Scarpe",
 			code: "123",
 			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus unde voluptatibus eius eos aspernatur fuga cum maiores inventore? Omnis itaque debitis illum at laudantium nostrum fuga accusantium error iusto aut?"
 		}, {
-			name: "Giulia",
+			name: "Nome 2",
 			color: "Verde",
 			size: "Medium",
 			category: "Pantaloni",
 			code: "456",
 			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus unde voluptatibus eius eos aspernatur fuga cum maiores inventore? Omnis itaque debitis illum at laudantium nostrum fuga accusantium error iusto aut?"
 		}, {
-			name: "Andrea",
+			name: "Nome 3",
 			color: "Rosso",
 			size: "Small",
 			category: "Scarpe",
 			code: "789",
 			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus unde voluptatibus eius eos aspernatur fuga cum maiores inventore? Omnis itaque debitis illum at laudantium nostrum fuga accusantium error iusto aut?"
 		}, {
-			name: "Riccardo",
+			name: "Nome 14",
 			color: "Verde",
 			size: "Small",
 			category: "Pantaloni",
 			code: "012",
 			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus unde voluptatibus eius eos aspernatur fuga cum maiores inventore? Omnis itaque debitis illum at laudantium nostrum fuga accusantium error iusto aut?"
 		}, {
-			name: "Michele",
+			name: "Nome 25",
 			color: "Rosso",
 			size: "Medium",
 			category: "Scarpe",
 			code: "345",
 			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus unde voluptatibus eius eos aspernatur fuga cum maiores inventore? Omnis itaque debitis illum at laudantium nostrum fuga accusantium error iusto aut?"
 		}, {
-			name: "Matteo",
+			name: "Nome 6",
 			color: "Verde",
 			size: "Large",
 			category: "Scarpe",
