@@ -1,9 +1,11 @@
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from "react-router";
 import { useLocation } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../state/index';
 import { useState } from "react";
+import PropTypes from 'prop-types';
 
 const Input = ({ label, value, callback, k }) => (
 	<div className="field">
@@ -19,44 +21,68 @@ const Input = ({ label, value, callback, k }) => (
 	</div>
 );
 
-const RadioInput = ({ label, elms, callback, name, param, k }) => { 
-	return(
-		<div className="field">
-			<label className="label">{label}</label>
-			<div className="control">
-				{elms.map((elm, i) => (
-					<div key={i} className="pb-2">
-						<label className="radio" key={i}>
-							<input
-								checked={elm.value === param}
-								type="radio"
-								name={name}
-								value={elm.value}
-								onChange={(e) => callback({ [k]: e.target.value })}
-							/>&nbsp;{elm.label}
-						</label>
-						<br />
-					</div>
-				))}
-			</div>
-		</div>
-)}
+Input.propTypes = {
+	value: PropTypes.string,
+	callback: PropTypes.func,
+	label: PropTypes.string,
+	k: PropTypes.string
+};
 
-const TextareaInput = ({ label, value, callback, k }) => {
-	return(
-		<div className="field">
-			<label className="label">{label}</label>
-			<div className="control">
-				<textarea 
-					className="textarea"
-					placeholder={label}
-					value={value}
-					onChange={(e) => callback({ [k]: e.target.value })}
-				/>
-			</div>
+const RadioInput = ({ label, elms, callback, name, param, k }) => (
+	<div className="field">
+		<label className="label">{label}</label>
+		<div className="control">
+			{elms.map((elm, i) => (
+				<div key={i} className="pb-2">
+					<label className="radio" key={i}>
+						<input
+							checked={elm.value === param}
+							type="radio"
+							name={name}
+							value={elm.value}
+							onChange={(e) => callback({ [k]: e.target.value })}
+						/>&nbsp;{elm.label}
+					</label>
+					<br />
+				</div>
+			))}
 		</div>
-	)
-}
+	</div>
+);
+
+RadioInput.propTypes = {
+	label: PropTypes.string,
+	elms: PropTypes.arrayOf(
+		PropTypes.shape({
+			value: PropTypes.string,
+			label: PropTypes.string
+	})),
+	callback: PropTypes.func,
+	name: PropTypes.string,
+	param: PropTypes.string,
+	k: PropTypes.string
+};
+
+const TextareaInput = ({ label, value, callback, k }) => (
+	<div className="field">
+		<label className="label">{label}</label>
+		<div className="control">
+			<textarea 
+				className="textarea"
+				placeholder={label}
+				value={value}
+				onChange={(e) => callback({ [k]: e.target.value })}
+			/>
+		</div>
+	</div>
+);
+
+TextareaInput.propTypes = {
+	label: PropTypes.string,
+	value: PropTypes.string,
+	callback: PropTypes.func,
+	k: PropTypes.string
+};
 
 const Insert = () => {
 	const navigate = useNavigate();

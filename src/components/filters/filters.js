@@ -1,6 +1,8 @@
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../state/index';
+import PropTypes from 'prop-types';
 
 const Input = ({ value, callback }) => (
 	<div className="control">
@@ -12,6 +14,11 @@ const Input = ({ value, callback }) => (
 		/>
 	</div>
 );
+
+Input.propTypes = {
+	value: PropTypes.string,
+	callback: PropTypes.func
+};
 
 const RadioInput = ({ elms, callback, name, param }) => { 
 	return(
@@ -32,6 +39,17 @@ const RadioInput = ({ elms, callback, name, param }) => {
 		))}
 	</div>
 )}
+
+RadioInput.propTypes = {
+	elms: PropTypes.arrayOf(
+		PropTypes.shape({
+			value: PropTypes.string,
+			label: PropTypes.string
+	})),
+	callback: PropTypes.func,
+	name: PropTypes.string,
+	param: PropTypes.string
+};
 
 const Filters = () => {
 	const { name, category, color, size } = useSelector((state) => state.filter)

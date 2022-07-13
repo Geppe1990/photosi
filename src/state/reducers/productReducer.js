@@ -3,8 +3,8 @@ export const productReducer = (state = "", action) => {
 		case "ADD_PRODUCT":
 			return [ ...state, action.payload ];
 		case "EDIT_PRODUCT":
-			const index = state.findIndex(elm => elm.code === action.payload.code)
-			const res = [...state];
+			var index = state.findIndex(elm => elm.code === action.payload.code)
+			var res = [...state];
 			res[index] = action.payload
 
 			return res;

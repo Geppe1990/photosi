@@ -1,3 +1,4 @@
+import React from 'react';
 import ProductList from "../productList/productList";
 import { useSelector } from 'react-redux';
 import Filters from "../filters/filters";

@@ -1,4 +1,6 @@
+import React from 'react';
 import { NavLink } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const ProductList = ({ attr }) => {
 	if(!attr) { return }
@@ -35,5 +37,15 @@ const ProductList = ({ attr }) => {
 		</div>
 	)
 }
+
+ProductList.propTypes = {
+	attr: PropTypes.shape({
+		name: PropTypes.string,
+		color: PropTypes.string,
+		size: PropTypes.string,
+		description: PropTypes.string,
+		code: PropTypes.string
+    })
+};
 
 export default ProductList;
