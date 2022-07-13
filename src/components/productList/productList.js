@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const ProductList = ({ attr }) => {
 	if(!attr) { return }
-	const { name, color, description } = attr;
+	const { name, color, size, description } = attr;
 
 	return (
 		<div className="card">
@@ -16,6 +16,7 @@ const ProductList = ({ attr }) => {
 					<div className="media-content">
 						<p className="title is-4">{name}</p>
 						<p className="subtitle is-6">{color}</p>
+						<p className="is-6">{size}</p>
 					</div>
 				</div>
 
